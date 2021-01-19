@@ -18,6 +18,7 @@ document.querySelector('#create').onclick = function(event) {
   document.querySelector('tbody').appendChild(cloneProduct)
 }
 
+//calculates total from all products 
 document.querySelector('#calculate').addEventListener('click', function() {
   let total = 0
   for (let i = 0; i < products.length; i++) {
@@ -43,39 +44,9 @@ document.querySelectorAll('.quantity').forEach(item => {
   })
 })
 
-
-// document.querySelectorAll('.quantity').addEventListener('input', function() {
-//   for (let i = 0; i < products.length; i++) {
-//     let subProduct = products[i]
-//     let newSub = subProduct.querySelector('.subtotal span')
-//     let quantityInput = subProduct.querySelector('input')
-//     let unitPrice = parseInt(subProduct.querySelector('.price span').innerText)
-//     newSub.innerText = unitPrice * quantityInput.value
-//     }
-// }, true)
-
 //removes .products but doesn't update #calculate total 
 document.querySelectorAll('.btn-remove').forEach(item => {
   item.addEventListener('click', function() {
     item.parentNode.parentNode.remove()
   })
 })
-// let removeButtons = document.querySelectorAll('.btn-remove')
-// for (let i = 0; i < removeButtons.length; i++) {
-//   let removeButton = removeButtons[i]
-//   removeButton.onclick = function() {
-//     removeButton.parentNode.parentNode.remove()
-//   }
-// }
-
-//SUBTOTAL UPDATES
-// for (let i = 0; i < products.length; i++) {
-//   let subProduct = products[i]
-//   let newSub = subProduct.querySelector('.subtotal span')
-//   let quantityInput = subProduct.querySelector('input')
-//   let unitPrice = parseInt(subProduct.querySelector('.price span').innerText)
-//   quantityInput.addEventListener('input', function() {
-//     newSub.innerText = unitPrice * quantityInput.value
-//     console.log(newSub)
-//   }, true)
-// }
